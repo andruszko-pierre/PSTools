@@ -51,7 +51,7 @@ function New-GUI_Extented {
         Panel  Form\Panel
         Button Form\Panel\Button
         .LINK
-        Github : https://github.com/lemien
+        Github : https://github.com/andruszko-pierre/PSTools/blob/main/New-GUI.ps1
 #>
     [cmdletbinding()] # Verbose support
 
@@ -138,7 +138,7 @@ function New-GUI_Extented {
 
 # Version Minifiée
 function New-GUI( [Parameter(ValueFromPipeline)] $Node, $Parent, $XMLPath ) {
-    # Help : https://github.com/lemien
+    # Help : https://github.com/andruszko-pierre/PSTools/blob/main/New-GUI.ps1
     process { try {  
         if ( -not $Node ) { $Node = ( [xml] $( Get-Content $XMLPath )).Form }
         if ($Node.Name -eq "#document") { $Node = [xml] $Node.Form }
