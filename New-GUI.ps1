@@ -52,7 +52,7 @@ function New-GUI_Extented {
         Button Form\Panel\Button
         .LINK
         Github : https://github.com/andruszko-pierre/PSTools/blob/main/New-GUI.ps1
-#>
+    #>
     [cmdletbinding()] # Verbose support
 
     param ( 
@@ -154,4 +154,5 @@ function New-GUI( [Parameter(ValueFromPipeline)] $Node, $Parent, $XMLPath ) {
         if ( $Node.HasChildNodes ) { $Node.ChildNodes | New-GUI -Parent $Control }
         if ( $Parent ) { $Parent.Controls.Add( $Control ) } else { return $GUI }
     } catch { Write-Error "Control ignoré : $( $Node.Name ) - $($_.Exception.Message)" }}
+
 }
